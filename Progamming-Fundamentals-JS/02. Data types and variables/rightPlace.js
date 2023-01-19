@@ -3,10 +3,7 @@ function rightPlace(word, char, validationWord){
     if (res === validationWord){
         console.log(`Matched`)
     } else {
-        console.log(`Not matched`)
+        console.log(`Not Matched`)
     }
-
-
-
 }
 rightPlace('Str_ng', 'i', 'String')
