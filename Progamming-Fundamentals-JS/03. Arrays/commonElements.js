@@ -5,8 +5,6 @@ function commonElements(arr, arr2){
             console.log(element)
         }
     }
-
-
 }
 commonElements(['S', 'o', 'f', 't', 'U', 'n', 'i', ' '],
 ['s', 'o', 'c', 'i', 'a', 'l']
