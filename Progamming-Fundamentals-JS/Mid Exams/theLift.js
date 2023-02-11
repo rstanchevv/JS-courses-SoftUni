@@ -1,34 +1,32 @@
 function theLift(arr) {
-    let i = 0;
     let peopleWaitingForLift = Number(arr[0]);
-    let liftSpace = arr[1].split(" ");
-    let freeSpace = [];
-    for (let i = 0; i < liftSpace.length; i++){
-        liftSpace[i] = Number(liftSpace[i])
-        let checkForFreeSpace = 4 - liftSpace[i];
-        freeSpace.push(checkForFreeSpace);
+    let liftSpace = arr[1].split(" ").map(Number);
+    for (let i = 0; i < liftSpace.length; i++) {
+        let onboarded = 0;
+        for (let j = 0; j < 4 - liftSpace[i]; j++) {
+            onboarded++
+            peopleWaitingForLift--
+            if (peopleWaitingForLift === 0){
+                liftSpace[i] += onboarded;
+                console.log(`The lift has empty spots!`)
+                console.log(liftSpace.join(" "));
+                return;
+            }
+        }
+        liftSpace[i] += onboarded;
     }
-    while (peopleWaitingForLift > 0){
-        if (i === liftSpace.length){
-            break;
-        }
-        let temp = peopleWaitingForLift;
-        peopleWaitingForLift -= freeSpace[i];
-        if (peopleWaitingForLift === 0){
-            liftSpace[i] += temp - peopleWaitingForLift;
-            console.log(liftSpace.join(" "));
-            return;
-        }
-        if (peopleWaitingForLift < 0){
-            peopleWaitingForLift = 0;
-        }
-        liftSpace[i] += temp - peopleWaitingForLift;
-        i++
+    if (liftSpace[liftSpace.length - 1] === 4 && peopleWaitingForLift === 0) {
+        console.log(liftSpace.join(" "))
+        return;
     }
-    console.log(peopleWaitingForLift > 0 ? `There isn't enough space! ${peopleWaitingForLift} people in a queue!` : `The lift has empty spots!`)
+    console.log(`There isn't enough space! ${peopleWaitingForLift} people in a queue!`);
     console.log(liftSpace.join(" "))
 }
-theLift((["16", "0 0 0 0"]))
+theLift([
+    "20",
+    "0 2 0"
+   ]   
+   )
 
        // for (let i = 0; i < liftSpace.length; i++){
     //     let temp = peopleWaitingForLift;
@@ -62,7 +60,7 @@ theLift((["16", "0 0 0 0"]))
 //         peopleWaitingForLift -= 1;
 //         liftSpace[i] = 1;
 //     }
-// i++    
+// i++
 // }
 // console.log(`The lift has empty spaces!`)
 // console.log(liftSpace.join(" "))
