@@ -1,19 +1,21 @@
-function maxNumber(arr){
+function maxNumbers(arr) {
     let newArr = [];
-    for (let index = 0; index < arr.length; index++){
-        const element = arr[index];
-        if (index === arr.length - 1){
-            newArr.push(element);
-            if (element === Math.max(...newArr)){
-                newArr.splice(0, newArr.length, element)
+    let currentNumber = 0;
+    let nextNumber = 0;
+    let maxNumber = Number.MIN_SAFE_INTEGER;
+    for (let i = 0; i < arr.length; i++) {
+        currentNumber = arr[i];
+        for (let j = i + 1; j <= arr.length; j++) {
+            nextNumber = arr[j];
+            if (nextNumber > maxNumber) {
+                maxNumber = nextNumber;
             }
-            break;
         }
-        const nextElement = arr[index + 1];
-        if (element > nextElement){
-            newArr.push(element)
+        if (currentNumber > maxNumber){
+            newArr.push(currentNumber);
         }
+        maxNumber = 0;
     }
     console.log(newArr.join(" "))
 }
-maxNumber([41, 41, 34, 20])
+(maxNumbers([14, 24, 3, 19, 15, 17]))

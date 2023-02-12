@@ -1,23 +1,23 @@
-function solve(arr) {
-    let hasEqualSum = false;
- 
-    for (let i = 0; i < arr.length; i++) {
-        let leftSum = 0;
-        let rightSum = 0;
-        for (let j = i-1; j >= 0; j--) {
-         leftSum += arr[j];
-        }
-        for (let j = i + 1; j < arr.length; j++) {
-            rightSum+=arr[j];
- 
-        }
-        if (leftSum === rightSum){
-            console.log(i);
-            hasEqualSum = true;
-        }
+function equalSums(arr){
+    let currentSum = arr[0];
+    let rightSum = 0;
+    if (arr.length === 1){
+        return `0`;
     }
-    if (!hasEqualSum){
-        console.log(`no`)
+    for (let i = 1; i < arr.length; i++){
+        rightSum = 0;
+        for (let j = i + 1; j < arr.length; j++){
+            rightSum += arr[j];
+            if (currentSum === rightSum){
+                return `${i}`
+            } else if (rightSum > currentSum){
+                break;
+            }
+        }
+        currentSum += arr[i];
+    }
+    if (currentSum != rightSum){
+        return `no`
     }
 }
-solve([1, 2, 3, 3])
+console.log(equalSums([1]))

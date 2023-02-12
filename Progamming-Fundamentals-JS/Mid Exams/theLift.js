@@ -1,32 +1,30 @@
 function theLift(arr) {
-    let peopleWaitingForLift = Number(arr[0]);
-    let liftSpace = arr[1].split(" ").map(Number);
-    for (let i = 0; i < liftSpace.length; i++) {
-        let onboarded = 0;
-        for (let j = 0; j < 4 - liftSpace[i]; j++) {
-            onboarded++
+    let peopleWaitingForLift = arr[0];
+    let liftStatus = arr[1].split(" ");
+    let availableSpace = liftStatus.map((a) => 4 - a);
+    for (let i = 0; i < liftStatus.length; i++) {
+        for (let j = 0; j < availableSpace[i]; j++) {
+            liftStatus[i]++;
             peopleWaitingForLift--
-            if (peopleWaitingForLift === 0){
-                liftSpace[i] += onboarded;
-                console.log(`The lift has empty spots!`)
-                console.log(liftSpace.join(" "));
+            if (peopleWaitingForLift === 0) {
+                if (liftStatus[liftStatus.length -1] === 4) {
+                    console.log(liftStatus.join(" "));
+                    return;
+                }
+                console.log(`The lift has empty spots!`);
+                console.log(liftStatus.join(" "));
                 return;
             }
         }
-        liftSpace[i] += onboarded;
     }
-    if (liftSpace[liftSpace.length - 1] === 4 && peopleWaitingForLift === 0) {
-        console.log(liftSpace.join(" "))
-        return;
-    }
-    console.log(`There isn't enough space! ${peopleWaitingForLift} people in a queue!`);
-    console.log(liftSpace.join(" "))
+console.log(`There isn't enough space! ${peopleWaitingForLift} people in a queue!`);
+console.log(liftStatus.join(" "))
 }
 theLift([
     "20",
     "0 2 0"
-   ]   
-   )
+]
+)
 
        // for (let i = 0; i < liftSpace.length; i++){
     //     let temp = peopleWaitingForLift;
