@@ -1,0 +1,60 @@
+function partyTime(dataGuest) {
+    let vipList = [];
+    let regularList = [];
+    let currentGuest = dataGuest.shift();
+ 
+    while (currentGuest !== 'PARTY') {
+        let isVip = !isNaN(currentGuest[0]);
+        // console.log(isVip)
+        if (isVip) {
+            vipList.push(currentGuest);
+        } else {
+            regularList.push(currentGuest)
+        }
+ 
+        currentGuest = dataGuest.shift();
+    }
+    let allGuestArr = vipList.concat(regularList);
+ 
+    for (let guest of dataGuest) {
+ 
+        allGuestArr.splice(allGuestArr.indexOf(guest), 1);
+      // защо judge дава 60/100 с метод .includes(),
+     // а с .indexOf() - 100/100 ??
+    }
+    console.log(allGuestArr.length)
+    for (let guest of allGuestArr) {
+        console.log(guest)
+    }
+}
+partyTime(['m8rfQBvl',
+'fc1oZCE0',
+'UgffRkOn',
+'7ugX7bm0',
+'9CQBGUeJ',
+'2FQZT3uC',
+'dziNz78I',
+'mdSGyQCJ',
+'LjcVpmDL',
+'fPXNHpm1',
+'HTTbwRmM',
+'B5yTkMQi',
+'8N0FThqG',
+'xys2FYzn',
+'MDzcM9ZK',
+'PARTY',
+'2FQZT3uC',
+'dziNz78I',
+'mdSGyQCJ',
+'LjcVpmDL',
+'fPXNHpm1',
+'HTTbwRmM',
+'B5yTkMQi',
+'8N0FThqG',
+'m8rfQBvl',
+'fc1oZCE0',
+'UgffRkOn',
+'7ugX7bm0',
+'9CQBGUeJ'
+]
+)
