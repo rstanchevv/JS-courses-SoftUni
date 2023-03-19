@@ -1,43 +1,47 @@
-function worldTour(tourArr){
-    let initialStops = tourArr[0];
-    let index = 1;
-    let command = tourArr[index];
-    index++
+function worldTour(arr){
+    let initialTour = arr[0];
+    let copyArr = arr.slice(1);
+    let command = copyArr.shift();
     while (command !== "Travel"){
-        let currentCommand = command.split(":");
-        switch(currentCommand[0]){
+        let commandSplit = command.split(":");
+        switch (commandSplit[0]){
             case "Add Stop":
-                let index = Number(currentCommand[1]);
-                let destination = currentCommand[2];
-                if (index > 0 && index < initialStops.length){
-                    initialStops = `${initialStops.substring(0, index)}${destination}${initialStops.substring(index, initialStops.length)}`
-                    console.log(initialStops)
+                let stopIndex = Number(commandSplit[1]);
+                let stopString = commandSplit[2];
+                if (stopIndex >= 0 && stopIndex < initialTour.length){
+                    initialTour = `${initialTour.substring(0, stopIndex)}${stopString}${initialTour.substring(stopIndex, initialTour.length)}`;
                 }
+                console.log(initialTour);
                 break;
             case "Remove Stop":
-                let startIndex = currentCommand[1];
-                let endIndex = currentCommand[2];
-                if (startIndex > 0 && startIndex < initialStops.length && endIndex > 0 && endIndex < initialStops.length){
-                    initialStops = `${initialStops.substring(startIndex,endIndex)}${initialStops.substring(endIndex + 1 +initialStops.length)}` 
+                let removeStartIndex = Number(commandSplit[1]);
+                let removeEndIndex = Number(commandSplit[2]);
+                if ((removeStartIndex >= 0 && removeStartIndex < initialTour.length) && (removeEndIndex >= 0 && removeEndIndex < initialTour.length)){
+                    let initialTourSplit = initialTour.split("");
+                    initialTourSplit.splice(removeStartIndex, (removeEndIndex - removeStartIndex + 1))
+                    initialTour = initialTourSplit.join("")
                 }
+                console.log(initialTour);
+                break;
+            case "Switch":
+                let oldString = commandSplit[1];
+                let newString = commandSplit[2];
+                // while (initialTour.includes(oldString)){
+                //     initialTour = initialTour.replace(oldString, newString);
+                // }
+                if (initialTour.includes(oldString)){
+                    initialTour = initialTour.replace(oldString, newString)
+                }
+                console.log(initialTour);
                 break;
         }
-        command = tourArr[index]
-        index++
+        command = copyArr.shift()
     }
-
-
-
-
-
-
-
-
-
+    console.log(`Ready for world tour! Planned stops: ${initialTour}`)
 }
-worldTour(["Hawai::Cyprys-Greece",
-"Add Stop:7:Rome",
-"Remove Stop:11:16",
-"Switch:Hawai:Bulgaria",
-"Travel"]
-)
+
+worldTour(["Albania:Bulgaria:Cyprus:Deuchland",
+"Add Stop:3:Nigeria",
+"Remove Stop:4:8",
+"Switch:Albania: Azərbaycan",
+"Travel"])
