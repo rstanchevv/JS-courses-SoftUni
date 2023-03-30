@@ -1,6 +1,6 @@
 function fancyBarcodes(arr){
     let numberOfBarcodes = arr.shift();
-    let regex = /@[@#]+(?<word>[A-Z][A-Za-z0-9]{4,}[A-Z])/g
+    let regex = /@[#]{1,}([A-Z][a-zA-Z0-9]{4,}[A-Z])@[#]{1,}/g
     let numbersRegex = /\d/g;
     for (const barcode of arr) {
         let productGroup = '00'
