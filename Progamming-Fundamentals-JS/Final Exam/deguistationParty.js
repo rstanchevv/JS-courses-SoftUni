@@ -22,9 +22,9 @@ function deguistationParty(arr) {
                     let indexOfMeal = obj[guest].indexOf(meal);
                     obj[guest].splice(indexOfMeal, 1);
                     dislikedArr.push(meal);
-                    console.log(`${guest} does not like the ${meal}.`)
+                    console.log(`${guest} doesn't like the ${meal}.`)
                 } else {
-                    console.log(`${guest} does not have the ${meal} in his/her collection.`)
+                    console.log(`${guest} doesn't have the ${meal} in his/her collection.`)
                 }
                 break;
         }
