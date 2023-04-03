@@ -87,29 +87,29 @@
 // }
 // uniqueCharacters(`thequickbrownfoxjumpsoverthelazydog`)
 
-function numberOfOccurences(str){
-    let uniquestr = ''
-    let currentCr = '';
-    let counter = 0;
-    for (let i = 0; i < str.length; i++){
-        if (!uniquestr.includes(str[i])){
-        uniquestr += str[i];
-        }
-    }
-    for (let i = 0; i < uniquestr.length; i++){
-        for (let j = 0 ; j < str.length; j++){
-            currentCr = uniquestr[i];
-            if (str[j] === currentCr){
-                counter++
-            }
-        }
-        console.log(`${currentCr} = ${counter} occurences`);
-        currentCr = '';
-        counter = 0;
-    }
+// function numberOfOccurences(str){
+//     let uniquestr = ''
+//     let currentCr = '';
+//     let counter = 0;
+//     for (let i = 0; i < str.length; i++){
+//         if (!uniquestr.includes(str[i])){
+//         uniquestr += str[i];
+//         }
+//     }
+//     for (let i = 0; i < uniquestr.length; i++){
+//         for (let j = 0 ; j < str.length; j++){
+//             currentCr = uniquestr[i];
+//             if (str[j] === currentCr){
+//                 counter++
+//             }
+//         }
+//         console.log(`${currentCr} = ${counter} occurences`);
+//         currentCr = '';
+//         counter = 0;
+//     }
+// }
+// numberOfOccurences(`qsha`)
 
-
-
-
-}
-numberOfOccurences(`kurkurkurkurkur`)
+let arr = ['z', 's', 'a', 'd'];
+arr.sort((a,b) => b.localeCompare(a))
+console.log(arr)
