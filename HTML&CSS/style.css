@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    animation: forwards;
+}
+nav {
+    background-color: blue;
+    padding: 15px;
+}
+nav li a {
+    color: white;
+    text-decoration: none;
+}
+nav li {
+    display: inline-block;
+    padding: 0 20px;
+}
+img {
+    height: auto;
+    max-width: 100%;
+}
+
