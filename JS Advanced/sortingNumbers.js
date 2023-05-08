@@ -3,8 +3,10 @@ function sortingNumbers(arr){
     while (arr.length > 0){
         let indexOfMin = arr.indexOf(Math.min(...arr));
         let indexOfMax = arr.indexOf(Math.max(...arr));
-        newArr.push(arr.splice(indexOfMin,1)[0]);
-        newArr.push(arr.splice(indexOfMax,1)[0]);
+        newArr.push(Math.min(...arr));
+        newArr.push(Math.max(...arr));
+        arr.splice(indexOfMin, 1)
+        arr.splice(indexOfMax, 1)
     }
     console.log(newArr)
 

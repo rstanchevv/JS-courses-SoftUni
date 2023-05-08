@@ -1,0 +1,5 @@
+function solve(arr){
+    let newArr = arr.slice(3);
+    console.log(newArr)
+}
+solve(["abc", "bcd", "cdds","asdsa","dawda"])
