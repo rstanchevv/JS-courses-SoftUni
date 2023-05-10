@@ -13,8 +13,9 @@ function equalNeighbours(arr){
                 }
             }
             if (arr[i + 1].includes(number)){
-                let secondIndexOf = arr[i+1].indexOf(number);
-                if (indexOf === secondIndexOf){
+                let firstIndexOf = arr[i + 1].indexOf(number);
+                let secondIndexOf = (arr[i+1].lastIndexOf(number));
+                if (indexOf === secondIndexOf || indexOf === firstIndexOf){
                     counter++
                 }
             }
