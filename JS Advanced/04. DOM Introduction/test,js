@@ -1,5 +1,6 @@
 function solve(arr){
-    let newArr = arr.slice(3);
+    let testString = 'bcd'
+    let newArr = arr.find((el, index) => arr.indexOf(testString))
     console.log(newArr)
 }
 solve(["abc", "bcd", "cdds","asdsa","dawda"])

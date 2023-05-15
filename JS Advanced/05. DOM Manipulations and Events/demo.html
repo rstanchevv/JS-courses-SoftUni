@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        li {
+            cursor: pointer;
+        }
+    </style>
+    <ul>
+        <li>test</li>
+        <li>test1</li>
+        <li>test2</li>
+        <li>test3</li>
+        <li>test4</li>
+    </ul>
+    
+    <script>
+        let listElements = document.querySelectorAll(`ul li`);
+        for (const el of listElements) {
+            if (el.style.textDecoration === 'line-through'){
+                el.removeEventListener('click', )
+                el.addEventListener('click', (e) => {
+                    e.currentTarget.style.textDecoration = 'none'
+                })
+            } else {
+                el.removeEventListener('click')
+                el.addEventListener('click', (e) => {
+                    e.currentTarget.style.textDecoration = 'line-through';
+                })
+            }
+        }
+    </script>
+</body>
+</html>

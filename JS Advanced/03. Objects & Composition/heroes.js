@@ -18,7 +18,7 @@ function solve() {
         }
         fight(){
             this.stamina--;
-            console.log(`${this.name} slashes at the foe.`)
+            console.log(`${this.name} slashes at the foe!`)
         }
     }
     let obj = {
