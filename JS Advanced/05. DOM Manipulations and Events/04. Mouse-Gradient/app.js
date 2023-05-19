@@ -1,6 +1,7 @@
 function attachGradientEvents() {
     let gradientElement = document.getElementById('gradient');
-    gradientElement.addEventListener('mouseover', (e) => {
-        console.log(e)
+    let resultElement = document.getElementById('result');
+    gradientElement.addEventListener('mousemove', (e) => {
+        resultElement.textContent = `${Math.floor((e.offsetX / 300) * 100)}%`
     })
 }
