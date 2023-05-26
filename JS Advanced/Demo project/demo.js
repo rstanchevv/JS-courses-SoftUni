@@ -1,6 +1,4 @@
-let newArr = [4,3]
-
-function findFive(element){
-    return element === 5;
-}
-console.log(newArr.some(findFive))
+let string = 'asd';
+let newString = 'dsa';
+let finalString = `${string.substring(1)}${newString.substring(1)}`
+console.log(finalString)
