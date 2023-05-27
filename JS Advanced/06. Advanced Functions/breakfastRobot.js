@@ -43,7 +43,7 @@ function solution(){
         }
     return function manager(command){
         [key, value, quantity] = command.split(' ');
-        return objOfProducts[key]();
+        return objOfProducts[key];
     }
 }
 let manager = solution();
