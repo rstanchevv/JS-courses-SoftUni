@@ -8,7 +8,7 @@ function solve() {
     let archiveSectionAll = document.querySelectorAll('#archive>ul')
     let clearBtn = document.querySelector('#archive>button');
     clearBtn.addEventListener('click', (e) => {
-        e.preventDefault();
+        e.preventDefault()
         Array.from(archiveSectionAll).forEach(x => x.remove())
     })
     addBtn.addEventListener('click', (e) => {
