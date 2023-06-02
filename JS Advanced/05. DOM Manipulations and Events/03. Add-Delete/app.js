@@ -8,8 +8,8 @@ function addItem() {
     newAItem.textContent = '[Delete]';
     newAItem.href = '#';
     newAItem.addEventListener('click', removeElement)
-    function removeElement(element){
-        newAItem.parentNode.remove()
+    function removeElement(e){
+        this.parentNode.remove()
     }
     newLiItem.appendChild(newAItem);
     getLiName.value = ''

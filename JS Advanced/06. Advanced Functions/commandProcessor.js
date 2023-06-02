@@ -1,28 +1,13 @@
 function solution() {
+  let internalString = '';
+
   let obj = {
-    string: "",
-    append,
-    removeEnd,
-    removeStart,
-    print,
-  };
-  function append(string) {
-    return (this.string = `${this.string}${string}`);
+    append(str) { internalString += str},
+    removeStart(n) {internalString = internalString.substring(n)},
+    removeEnd(n) {internalString = internalString.substring(0, internalString.length - n)},
+    print() {console.log(internalString);}
   }
-  function removeEnd(number) {
-    return (this.string = `${this.string.substring(
-      0,
-      this.string.length - number
-    )}`);
-  }
-  function print() {
-    return console.log(this.string);
-  }
-  function removeStart(number) {
-    let subStringForRemoval = this.string.substring(0, number);
-    return (this.string = this.string.replace(subStringForRemoval, ""));
-  }
-  return obj;
+  return obj
 }
 
 let firstZeroTest = solution();

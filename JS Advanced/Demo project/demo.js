@@ -1,8 +1,12 @@
 function test(){
-    let a  = 10;
-    let b = () => {
-        console.log(this);
+    let obj = {
+        name: 'test',
+        age: 25
     }
-    b()
+    let printNameAge = printNameAndAge.bind(obj);
+    console.log(printNameAge())
 }
-test()(b)
+function printNameAndAge(){
+    return `${this.name} = ${this.age}`
+}
+test();

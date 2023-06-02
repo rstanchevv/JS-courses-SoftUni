@@ -1,8 +1,8 @@
-function solution(number){
-    function add(a,b){
-        return a + b;
+function solution(firstNumber){
+    let b = (secondNumber) => {
+        return firstNumber + secondNumber;
     }
-    return add.bind(this, number)
+    return b;
 }
 let add5 = solution(5);
 
