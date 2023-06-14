@@ -1,18 +1,8 @@
-const chai =  require('chai');
-
-function sum(arr){
-    let sum = 0;
-    for (const number of arr) {
-        sum += Number(number)
+function add(n){
+  return (b) => {
+    return (c) => {
+      return n + b + c
     }
-    return sum;
+  }
 }
-
-    describe('sum function', function(){
-        it('should sum integers correctly', function(){
-            let arr = [3,5,6];
-            let result = sum(arr);
-            chai.expect(result).to.equal(14)
-        })
-    })
-
+console.log(add(1)(2)(3))
