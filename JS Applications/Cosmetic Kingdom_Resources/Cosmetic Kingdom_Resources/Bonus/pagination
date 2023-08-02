@@ -1,0 +1,12 @@
+// 1) adjust getAll request with the following:
+
+// const pageSize = 3 * could be different;
+
+// export async function getAll(page - 1){
+//     const offset = (page - 1) * pageSize
+//     return get(standard path /data/recipes + ?offset=${offset}&pageSize=${pageSize})
+// }
+
+
+
+
