@@ -1,0 +1,16 @@
+<form action="" method="post" class="cat-form">
+    <h2>Add Cat</h2>
+    <label for="name">Name</label>
+    <input name="name" type="text" id="name">
+    <label for="description">Description</label>
+    <textarea name="description" id="description"></textarea>
+    <label for="image">Image</label>
+    <input name="image" type="text" id="image">
+    <label for="group">Breed</label>
+    <select name="breed" id="group">
+        {{#each breed}}
+        <option value="{{breed}}">{{breed}}</option>
+        {{/each}}
+    </select>
+    <button type="submit">Add Cat</button>
+</form>
