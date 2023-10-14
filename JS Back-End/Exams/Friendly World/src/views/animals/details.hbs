@@ -1,0 +1,56 @@
+<main class="details">
+    <!-- Details page -->
+    <section id="details">
+        <div id="details-wrapper">
+            <p id="details-title">Name: {{currentAnimal.name}}</p>
+            <div id="img-wrapper">
+                <img src="{{currentAnimal.image}}" alt="{{currentAnimal.name}}" />
+            </div>
+            <div id="info-wrapper">
+                <table>
+                    <tr>
+                        <td>
+                            <p>
+                                Years: <span id="details-years">{{currentAnimal.years}}</span>
+                            </p>
+                        </td>
+                        <td>
+                            <p>Kind: <span id="details-kind">{{currentAnimal.kind}}</span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Need of: <span id="details-need">{{currentAnimal.need}}</span></p>
+                        </td>
+                        <td>
+                            <p>Location: <span id="details-location">{{currentAnimal.location}}</span></p>
+                        </td>
+                    </tr>
+                </table>
+                <p>Description: <span id="details-description">{{currentAnimal.description}}</span></p>
+            </div>
+
+            <!--Edit and Delete are only for creator-->
+            <div id="action-buttons">
+                {{#if isOwner}}
+                <a href="/animals/details/{{currentAnimal._id}}/edit" id="edit-btn">Edit</a>
+                <a href="/animals/details/{{currentAnimal._id}}/delete" id="delete-btn">Delete</a>
+                {{/if}}
+                {{#if isAuthenticated}}
+                {{#unless isOwner}}
+                {{#unless hasDonated}}
+                <a href="/animals/details/{{currentAnimal._id}}/donate" id="donation-btn">Donation</a>
+                {{/unless}}
+                {{/unless}}
+                {{/if}}
+                {{#if hasDonated}}
+                {{#unless isOwner}}
+                {{#unless isGuest}}
+                <p id="already-donated">You already donated!</p>
+                {{/unless}}
+                {{/unless}}
+                {{/if}}
+            </div>
+        </div>
+    </section>
+</main>
