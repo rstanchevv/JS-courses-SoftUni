@@ -1,0 +1,69 @@
+<main>
+
+    <section id="details-page">
+
+        <div class="main_card">
+            <div class="card_left">
+                <div class="card_datails">
+
+                    <h1>Name: {{post.name}}</h1>
+                    <h3>Created by an author: {{post.owner.email}}</h3>
+                    <div class="card_character">
+                        <p class="card-species">Species: {{post.species}}</p>
+                        <p class="card-skin">Skin colour: {{post.skinColour}}</p>
+                        <p class="card-eye">Eye Colour: {{post.eyeColour}}</p>
+                    </div>
+
+                    <p class="disc">{{post.description}}</p>
+
+                    
+                    <!-- If there is no registered user, do not display buttons-->
+                    <div class="social-btn">
+                        {{#if isOwner}}
+                        <a href="/posts/details/{{post._id}}/edit" class="edit-btn">Edit</a>
+                        <a href="/posts/details/{{post._id}}/delete" class="del-btn">Delete</a>
+                        {{/if}}
+                        {{#if isAuthenticated}}
+                        {{#unless hasVoted}}
+                        {{#unless isOwner}}
+                        <a href="/posts/details/{{post._id}}/vote" class="vote-up">Vote</a>
+                        {{/unless}}
+                        {{/unless}}
+                        {{/if}}
+                        {{#if hasVoted}}
+                        {{#unless isOwner}}
+                        {{#unless isGuest}}
+                        <p class="thanks-for-vote">Thanks For Voting</p>
+                        {{/unless}}
+                        {{/unless}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+            <div class="card_right">
+                <img src="{{post.image}}" alt="image">
+        </div>
+    </section>
+
+    <section id="votes">
+        <div class="vote-info">
+            <div class="card_left">
+                <div class="card_datails">
+                    <h1>Votes</h1>
+                    <div class="card_vote">
+                        <!-- Show the rating of votes, if there are no votes yet, the number must be 0. -->
+                        <p class="PV">Total rating of votes: {{numberOfVotes}}</p>
+                    </div>
+                    {{#if votesNotEmpty}}
+                    <p class="disc">People who voted for the post - {{voters}}</p>
+
+                    <!-- If not display: -->
+                    {{else}}
+                    <p class="disc">People who voted for the post - No one has voted yet.</p>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>

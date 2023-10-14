@@ -1,0 +1,65 @@
+<main>
+
+    <section id="details-page">
+
+        <div class="main_card">
+            <div class="card_left">
+                <div class="card_datails">
+
+                    <h1>Name: {{post.name}}</h1>
+                    <h3>Created by an author: {{post.owner.email}}</h3>
+                    <div class="card_character">
+                        <p class="card-species">Species: {{post.species}}</p>
+                        <p class="card-skin">Skin colour: {{post.skinColour}}</p>
+                        <p class="card-eye">Eye Colour: {{post.eyeColour}}</p>
+                    </div>
+
+                    <p class="disc">{{post.description}}</p>
+
+                    {{#if isOwner}}
+                    <!-- If there is no registered user, do not display buttons-->
+                    <div class="social-btn">
+                        <!-- Only for registered user and author of the post -->
+                        <a href="#" class="edit-btn">Edit</a>
+                        <a href="#" class="del-btn">Delete</a>
+                        {{/if}}
+                        {{#if isAuthenticated}}
+                        {{#unless isOwner}}
+                        {{#unless hasVoted}}
+                        <a href="#" class="vote-up">Vote</a>
+                        {{else}}
+                        <p class="thanks-for-vote">Thanks For Voting</p>
+                        <!-- logged in users, who have not yet voted-->
+                        {{/unless}}
+                        {{/unless}}
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+            <div class="card_right">
+                <img src="/img/Thestral.jpeg" alt="image">
+            </div>
+        </div>
+
+    </section>
+
+    <section id="votes">
+        <div class="vote-info">
+            <div class="card_left">
+                <div class="card_datails">
+                    <h1>Votes</h1>
+                    <div class="card_vote">
+                        <!-- Show the rating of votes, if there are no votes yet, the number must be 0. -->
+                        <p class="PV">Total rating of votes: 0</p>
+                    </div>
+                    <!-- If there are already people who have cast their vote for the post, separate their emails with a comma and a space ", " -->
+                    <!-- <p class="disc">People who voted for the post - alex@gmai.com, petar@gmail.com, petq@gmail.com</p>-->
+
+                    <!-- If not display: -->
+                    <p class="disc">People who voted for the post - No one has voted yet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
