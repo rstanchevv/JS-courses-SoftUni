@@ -1,0 +1,25 @@
+
+
+    <main id="login">
+        <!-- In case of error, you should display div with class "errorContainer" -->
+        <!-- You can choose to display the first error or all of them (error message/s in your opinion) -->
+        {{#if error}}
+        <div>
+            <div class="errorContainer">
+                <p>{{error}}</p>
+            </div>
+        </div>
+        {{/if}}
+
+        <div class="login-box">
+            <h1>Login</h1>
+            <form action="#" method="post">
+                <label>Email</label>
+                <input type="text" name="email" placeholder="Email..">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Password..">
+                <input type="submit" value="Login">
+            </form>
+            <p>Don't have an account? <a href="/users/register">Register here</a></p>
+        </div>
+    </main>

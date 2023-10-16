@@ -1,0 +1,24 @@
+<main id="catalog">
+
+    {{#if error}}
+    <div>
+        <div class="errorContainer">
+            <p>{{error}}</p>
+        </div>
+    </div>
+    {{/if}}
+
+    <section class="game-market">
+        <h1>Game Trade Code</h1>
+        <div class="offer-list">
+            {{#each games}}
+            {{>game}}
+            {{else}}
+            <div class="no-offer">
+                <p>There are no game offers found!</p>
+            </div>
+            {{/each}}
+        </div>
+
+    </section>
+</main>

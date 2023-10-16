@@ -19,7 +19,6 @@ router.get('/search', (req,res) => {
 router.post('/search',async (req, res) => {
     try{
         const animals = await findAnimals(req.body.location).lean()
-        console.log(animals)
         res.render('general/search', {animals})
     } catch(err){
         console.log(err)
