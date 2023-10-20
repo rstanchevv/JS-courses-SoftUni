@@ -1,5 +1,6 @@
 const router = require('express').Router();
 
+const { getWishingListByOwner } = require('../managers/bookManager');
 const userManager = require('../managers/userManager');
 const { getErrorMessage } = require('../utils/errorHelpers');
 
@@ -8,10 +9,10 @@ router.get('/register', (req, res) => {
 })
 
 router.post('/register',async (req, res) => {
-    const {username, email, password, rePassword} = req.body;
+    const {email, username, password, rePassword} = req.body;
 
     try{
-        const token = await userManager.register({username: username.toLowerString(), email: email.toLowerString(), password, rePassword})
+        const token = await userManager.register({email: email.toLowerCase(), username: username.toLowerCase(), password, rePassword})
         res.cookie('token', token);
         res.redirect('/')
     } catch(err) {
@@ -25,15 +26,23 @@ router.get('/login', (req,res) => {
 })
 
 router.post('/login',async (req,res) => {
-    const {username, password} =  req.body;
+    const {email, password} =  req.body;
 
     try{
-        const token = await userManager.login(username.toLowerCase(), password)
+        const token = await userManager.login(email.toLowerCase(), password)
         res.cookie('token', token)
         res.redirect('/')
     } catch(err){
-        res.render('auth/login', {error: getErrorMessage(err), username})
+        res.render('auth/login', {error: getErrorMessage(err), email})
     }
+})
+
+router.get('/profile',async (req, res) => {
+    const userId = req.user._id
+    const ownerEmail = req.user.email
+    const books =await getWishingListByOwner(userId).lean()
+
+    res.render('auth/profile', {books, ownerEmail})
 })
 
 router.get('/logout', (req, res) => {

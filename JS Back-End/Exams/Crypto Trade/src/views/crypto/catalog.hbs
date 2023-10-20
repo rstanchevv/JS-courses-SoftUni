@@ -1,0 +1,21 @@
+<main>
+    {{#if error}}
+    <div>
+        <div class="errorContainer">
+            <p>{{error}}</p>
+        </div>
+    </div>
+    {{/if}}
+    <section class="crypto-market">
+        <h1><span>Crypto</span> Trade</h1>
+        <div class="offer-list">
+            {{#each cryptos}}
+            {{>crypto}}
+            {{else}}
+            <div class="no-offer">
+                <p>There are no crypto offers found!</p>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+</main>

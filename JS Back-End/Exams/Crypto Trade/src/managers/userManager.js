@@ -3,8 +3,8 @@ const jwt = require('../lib/jwt');
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 
-exports.login =async (username, password) => {
-    const user =await checkForExistingUser(username.toLowerString())
+exports.login =async (email, password) => {
+    const user =await checkForExistingUser(email)
     
     if (!user) {
         throw new Error ('Email or password wrong');
@@ -43,8 +43,8 @@ exports.register =async (userData) => {
 }
 
 
-const checkForExistingUser =async (username) => {
-    const user = await User.findOne({username});
+const checkForExistingUser =async (email) => {
+    const user = await User.findOne({email});
     return user;
 }
 
