@@ -8,14 +8,14 @@ router.get('/register', (req, res) => {
 })
 
 router.post('/register',async (req, res) => {
-    const {username, email, password, rePassword} = req.body;
+    const {email, firstName, lastName, password, rePassword} = req.body;
 
     try{
-        const token = await userManager.register({username: username.toLowerString(), email: email.toLowerString(), password, rePassword})
+        const token = await userManager.register({email: email.toLowerCase(), firstName, lastName, password, rePassword})
         res.cookie('token', token);
         res.redirect('/')
     } catch(err) {
-        res.render('auth/register', {error: getErrorMessage(err), username, email})
+        res.render('auth/register', {error: getErrorMessage(err), email, firstName, lastName})
     }
 })
 
@@ -25,14 +25,14 @@ router.get('/login', (req,res) => {
 })
 
 router.post('/login',async (req,res) => {
-    const {username, password} =  req.body;
+    const {email, password} =  req.body;
 
     try{
-        const token = await userManager.login(username.toLowerCase(), password)
+        const token = await userManager.login(email.toLowerCase(), password)
         res.cookie('token', token)
         res.redirect('/')
     } catch(err){
-        res.render('auth/login', {error: getErrorMessage(err), username})
+        res.render('auth/login', {error: getErrorMessage(err), email})
     }
 })
 

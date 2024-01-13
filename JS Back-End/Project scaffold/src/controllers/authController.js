@@ -11,7 +11,7 @@ router.post('/register',async (req, res) => {
     const {username, email, password, rePassword} = req.body;
 
     try{
-        const token = await userManager.register({username: username.toLowerString(), email: email.toLowerString(), password, rePassword})
+        const token = await userManager.register({username: username.toLowerCase(), email: email.toLowerCase(), password, rePassword})
         res.cookie('token', token);
         res.redirect('/')
     } catch(err) {

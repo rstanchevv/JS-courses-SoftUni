@@ -4,7 +4,7 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 
 exports.login =async (username, password) => {
-    const user =await checkForExistingUser(username.toLowerString())
+    const user =await checkForExistingUser(username)
     
     if (!user) {
         throw new Error ('Email or password wrong');

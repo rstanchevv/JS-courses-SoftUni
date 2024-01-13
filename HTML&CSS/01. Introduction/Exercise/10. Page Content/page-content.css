@@ -1,0 +1,22 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #CCCCCC;
+}
+
+.content {
+    font-size: 24px;
+}
+
+.description {
+    font-style: italic;
+}
+
+header h1 {
+    font-size: 28px;
+}
+
+section {
+    margin-left: 20px;
+}
+

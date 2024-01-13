@@ -1,31 +1,26 @@
-<main>
+<section id="login-section" class="narrow">
 
-    <!-- Start Login Section-->
-    <div class="login-register-div">
-        <div class="login-register-box">
-            <h1>Petstagram</h1>
+    <h1 class="item">Login</h1>
 
-            <!-- Start Login Form-->
-            <form method="POST">
-                <p>
-                    <label>Username:</label>
-                    <input type="text" name="username" value="{{username}}" placeholder="Username">
-                </p>
-                <p>
-                    <label>Password:</label>
-                    <input type="password" name="password" placeholder="Password">
-                </p>
+    <div class="item padded align-center">
 
-                <!-- Login Button-->
-                <button type="submit">LogIn</button>
-            </form>
+        <form class="aligned" method="POST" action="">
 
-        </div>
-        <div class="second-option">
+            <label>
+                <span>Email</span>
+                <input type="text" name="email" value="{{email}}">
+            </label>
+            <label>
+                <span>Password</span>
+                <input type="password" name="password">
+            </label>
 
-            <!-- Link to Register Page-->
-            <p>Don't have account? <a href="#">Register</a></p>
-        </div>
+            <div class="align-center">
+                <input class="action" type="submit" value="Sign In">
+            </div>
+
+        </form>
+
     </div>
 
-</main>
+</section>
