@@ -1,0 +1,85 @@
+@media (max-width: 600px){
+    .home-header {
+        padding: 12px 0;
+    }
+
+    .home-header .navbar-link {
+        display: none;
+    }
+    
+    .home-container {
+        padding-top : 0px
+    }
+    .section-heading-section-heading {
+        margin-top: 10px;
+        margin-bottom: 24px;
+    }
+
+    .home-navbar {
+        position: static;
+    }
+
+    .section-container {
+        flex-direction: column;
+    }
+
+    .max-width-container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .Heading-2 {
+        font-size: 21px
+    }
+
+    .section-heading-text1 {
+        font-size: 12px;
+    }
+
+    .home-cards-container {
+        grid-gap: 10px;
+    }
+
+    .column {
+        flex-direction: column;
+    }
+    .home-content {
+        margin: 0 0 10px 0;
+    }
+
+    .category-card-image {
+        width: 195px;
+    }
+    .home-left4{
+        padding: 1em 1em;
+        gap: 0.2em
+    }
+
+    .home-text29{
+        display: block;
+        font-size: 26px ;
+    }
+
+    .home-text30 {
+        width: 100%;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .home-image6 {
+        width: 100%;
+    }
+
+    .home-footer1 {
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+    .home-container09 {
+        order: 9999
+    }
+
+    .home-links-container {
+        flex-direction: column;
+    }
+}

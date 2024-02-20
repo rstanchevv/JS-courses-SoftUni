@@ -1,0 +1,22 @@
+body {
+    font: 18px/1.5 Helvetica, sans-serif;
+    padding: 3em 2em
+}
+
+article {
+    margin: 54px;
+    padding: 54px;
+    background-color: rgb(51,102,153);
+    border-radius: 16px;
+    text-indent: 40px;
+}
+
+p {
+    text-indent: 40px;
+    color: white
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}

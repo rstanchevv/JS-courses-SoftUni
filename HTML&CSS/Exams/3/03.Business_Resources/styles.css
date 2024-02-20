@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Serif');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 20px/1.5 "PT Sans", sans-serif;
+    color: #836259;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "PT Serif"
+}
+
+body {
+    background-image: url(./images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top center;
+}
+
+.site-section.banner h2 {
+    font-size: 68px;
+    line-height: 1.26;
+    margin-bottom: 1rem;
+}
+
+.site-section.banner p {
+    max-width: 790px;
+    font-size: 24px;
+    padding-bottom: 270px;
+}
+
+.site-title a {
+    display: block;
+    width: 130px;
+    height: 110px;
+    overflow: hidden;
+    text-indent: -200vw;
+    background-image: url(./images/logo.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.site-section {
+    padding: 2em;
+}
+
+.site-section.banner .container{
+    color: white;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.site-header nav ul {
+    display: flex;
+    list-style: none outside;
+    gap: 1em
+}
+
+.site-footer{
+    background-color: #171720 ;
+    color: white
+}
+
+.site-section.sponsors {
+    background-color: white;
+}
+
+.site-section.partners {
+    background-color: white;
+}
+
+.site-section.columns {
+    background-color: white;
+}
+
+.site-section.columns h2 {
+    font-size: 36px;
+    color: #37282B;
+    margin-bottom: 1em;
+}
+
+.site-section.columns .column-container {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.site-section.columns .column-container .column {
+    max-width: 680px;
+}
+
+.site-section.site-header nav ul li a {
+    color: white;
+    text-decoration: none;
+}

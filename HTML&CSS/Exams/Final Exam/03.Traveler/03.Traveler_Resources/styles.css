@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+html {
+    font: 18px/1.5 'Karla', serif;
+}
+
+
+
+h2 {
+    font: 90px/1 'Cormorant Infant'
+}
+h3 {
+    font: 60px/1 'Cormorant Infant'
+}
+h4 {
+    font: 50px/1 'Cormorant Infant'
+}
+h5 {
+    font: 40px/1 'Cormorant Infant'
+}
+
+
+body {
+    background-image: url('./images/poster.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: top center;
+}
+
+.site-section.banner h2 {
+    color: white;
+    text-align: center;
+    padding-bottom: 250px;
+    font-weight: bold;
+}
+
+.site-section.banner p {
+    text-align: center;
+    color: white;
+    padding-bottom:100px
+}
+
+.site-title a {
+    display: block;
+    width: 100px;
+    height: 50px;
+    overflow: hidden;
+    text-indent: -200vw;
+    background-image: url(./images/logo.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.site-title-footer a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    text-indent: -200vw;
+    background-image: url(./images/logo.webp);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.site-section {
+    padding: 2em 6em;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 280px;
+}
+
+.site-header nav ul {
+    display: flex;
+    list-style: none outside;
+    gap: 2em
+}
+
+.site-header nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.site-footer {
+    background-color: #352B2A;
+    color: white;
+}
+
+.site-section.testemonial {
+    background-color: #F8F0E9;
+}
+
+.site-section.support {
+    background-color: #E14747 ;
+}
+
+.site-section.article {
+    background-color: #F8F0E9;
+}
+
+.site-section.guide {
+    background-color: #E14747 ;
+}
+
+.site-section.testemonial h3 {
+    padding: 50px 0
+}
+
+
+.site-section.testemonial blockquote>h3 {
+    font-style: italic;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.site-section.testemonial blockquote>h3::before, .site-section.testemonial blockquote>h3::after {
+    content: '\201C';
+}
+
+.site-section.support {
+    text-align: center;
+    color:white
+}
+
+.site-section.support h5 {
+    padding: 2em 0;
+    font-weight: bold;
+}
+
+.site-section.support p {
+    font-size: 16px;
+    padding-bottom: 1em;
+}
+
+
+.article-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-img {
+    width: 400px;
+    height: 300px;
+    align-self: center;
+}
+
+.article-container h4 {
+    padding: 2em 0;
+    font-weight: bold;
+    color: #322827;
+    align-self: center;
+}
+
+.article-container h4 div {
+    text-align: center;
+}
+
+.article-container p {
+    max-width: 500px;
+    padding-bottom: 2em;
+    align-self: center
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: block;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+    text-decoration: none;
+    padding: 0.4em;
+    color: black
+}
+
+.btn.read-more {
+    margin-left: 200px;
+    align-self: flex-start;
+}
+
+.btn.read-all {
+    align-self: center;
+    margin-bottom: 50px;
+}
+
+.site-section.guide {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+}
+
+.site-section.guide h4 {
+    padding: 2em 0;
+    font-weight: bold;
+    color: white;
+}
+
+.site-section.guide p {
+    max-width: 800px;
+    color:white;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.btn.find-guide {
+    background-color: #FAD87A;
+    padding: 0.5em;
+    border-radius: 20px;
+    margin-bottom: 50px;
+}
+
+.site-title-footer {
+    padding-bottom: 20px
+}
+
+.site-section.site-footer p{
+    max-width: 630px;
+}
+
+.site-section.site-footer p:nth-child(3) {
+    padding-top: 20px;
+    font-size: 16px;
+    color: #524543
+}
+
+
+
+
+
+
+
+
+
+
